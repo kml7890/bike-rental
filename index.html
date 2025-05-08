@@ -3,384 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamal Bike Rental - Explore Almora</title>
+    <title>Kamal and Mayank Bike Rental - Explore Almora</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        body {
-            background-color: #E8F5E9;
-        }
-
-        nav {
-            background-color: #2E7D32;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            padding: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        nav ul li a:hover {
-            color: #FF4500;
-        }
-
-        #userStatus {
-            color: white;
-            font-size: 1rem;
-            margin-left: 1rem;
-        }
-
-        header {
-            background-color: #2E7D32;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 2rem;
-            background: url('images/almora.jpg') no-repeat center center/cover;
-            color: white;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .hero h2, .hero p, .hero button {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h2 {
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .hero button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #FF4500;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 1rem;
-        }
-
-        .hero button:hover {
-            background-color: #CC3700;
-        }
-
-        .about {
-            text-align: center;
-            padding: 2rem;
-            background-color: #fff;
-            margin: 2rem auto;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .about h2 {
-            font-family: 'Roboto', sans-serif;
-            margin-bottom: 1rem;
-        }
-
-        .filter-section {
-            text-align: center;
-            padding: 1rem;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .filter-section select, .filter-section input {
-            padding: 8px;
-            font-size: 1rem;
-            border-radius: 4px;
-            border: 1px solid #0288D1;
-            cursor: pointer;
-            margin: 0 0.5rem;
-        }
-
-        .filter-section label {
-            font-size: 1rem;
-            margin-right: 0.5rem;
-        }
-
-        .bike-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 2rem;
-            gap: 1rem;
-        }
-
-        .bike-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 250px;
-            text-align: center;
-            padding: 1rem;
-            display: none;
-        }
-
-        .bike-card.show {
-            display: block;
-        }
-
-        .bike-card img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .bike-card h3 {
-            margin: 0.5rem 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .bike-card p {
-            color: #555;
-        }
-
-        .bike-card button {
-            padding: 8px 16px;
-            background-color: #FF4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 0.5rem;
-        }
-
-        .bike-card button:hover {
-            background-color: #CC3700;
-        }
-
-        .kamal-pick {
-            text-align: center;
-            padding: 2rem;
-            background-color: #fff;
-            margin: 2rem auto;
-            max-width: 800px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .kamal-pick img {
-            width: 100%;
-            max-width: 300px;
-            border-radius: 5px;
-        }
-
-        .kamal-pick button {
-            padding: 8px 16px;
-            background-color: #FF4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .kamal-pick button:hover {
-            background-color: #CC3700;
-        }
-
-        .testimonials {
-            background-color: #f9f9f9;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        .testimonials h2 {
-            font-family: 'Roboto', sans-serif;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-container {
-            display: flex;
-            overflow: hidden;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .testimonial {
-            min-width: 100%;
-            padding: 1rem;
-            transition: transform 0.5s ease;
-        }
-
-        .testimonial p {
-            font-style: italic;
-            color: #333;
-        }
-
-        .testimonial h4 {
-            margin-top: 0.5rem;
-            color: #FF4500;
-        }
-
-        .booking-form, .contact-form, .quick-quote {
-            max-width: 500px;
-            margin: 2rem auto;
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .booking-form h2, .contact-form h2, .quick-quote h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .booking-form label, .contact-form label, .quick-quote label {
-            display: block;
-            margin: 0.5rem 0 0.2rem;
-        }
-
-        .booking-form input, .contact-form input, .contact-form textarea, .quick-quote select, .quick-quote input {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 1rem;
-            border: 1px solid #0288D1;
-            border-radius: 4px;
-        }
-
-        .booking-form button, .contact-form button, .quick-quote button {
-            width: 100%;
-            padding: 10px;
-            background-color: #FF4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .booking-form button:hover, .contact-form button:hover, .quick-quote button:hover {
-            background-color: #CC3700;
-        }
-
-        .login-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 200;
-        }
-
-        .login-modal.show {
-            display: block;
-        }
-
-        .login-form {
-            background-color: white;
-            max-width: 400px;
-            margin: 10% auto;
-            padding: 2rem;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .login-form h2 {
-            font-family: 'Roboto', sans-serif;
-            margin-bottom: 1rem;
-        }
-
-        .login-form input {
-            width: 100%;
-            padding: 8px;
-            margin: 0.5rem 0;
-            border: 1px solid #0288D1;
-            border-radius: 4px;
-        }
-
-        .login-form button {
-            padding: 10px;
-            background-color: #FF4500;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 1rem;
-        }
-
-        .login-form button:hover {
-            background-color: #CC3700;
-        }
-
-        footer {
-            background-color: #2E7D32;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        footer p {
-            font-size: 1rem;
-        }
-
-        @media (max-width: 600px) {
-            .bike-card, .kamal-pick img {
-                width: 100%;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .login-form {
-                margin: 20% auto;
-                width: 90%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="particle-canvas"></canvas>
     <nav>
         <ul>
             <li><a onclick="scrollToSection('hero')">Home</a></li>
@@ -394,33 +22,33 @@
 
     <div class="login-modal" id="loginModal">
         <div class="login-form">
-            <h2>Login to Kamal Bike Rental</h2>
+            <h2>Login to Kamal and Mayank Bike Rental</h2>
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Username" required>
                 <input type="password" id="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-                <button type="button" onclick="hideLoginModal()">Close</button>
+                <button type="submit" class="btn">Login</button>
+                <button type="button" class="btn" onclick="hideLoginModal()">Close</button>
             </form>
             <p>Hint: Try username "kamal" and password "almora123"</p>
         </div>
     </div>
 
     <header>
-        <h1>Kamal Bike Rental</h1>
+        <h1>Kamal and Mayank Bike Rental</h1>
     </header>
 
     <section class="hero" id="hero">
         <h2>Explore Almora Hills on Two Wheels!</h2>
-        <p>Ride hassle-free with Kamal affordable bike rentals!</p>
-        <button onclick="scrollToBooking()">Rent Now</button>
+        <p>Ride hassle-free with Kamal and Mayank affordable bike rentals!</p>
+        <button class="btn" onclick="scrollToBooking()">Rent Now</button>
     </section>
 
-    <section class="about">
-        <h2>About Kamal Bike Rental</h2>
+    <section class="section about">
+        <h2>About Kamal and Mayank Bike Rental</h2>
         <p>Serving adventurers since 2025, we provide the best bikes to explore the scenic hills and vibrant culture of Almora, Kausani, and Binsar. Designed by Kamal, a proud Almora native!</p>
     </section>
 
-    <section class="filter-section">
+    <section class="section filter-section">
         <label for="bikeFilter">Filter Bikes: </label>
         <select id="bikeFilter" onchange="filterBikes()">
             <option value="all">All Bikes</option>
@@ -432,39 +60,39 @@
         <input type="range" id="priceRange" min="100" max="500" value="500" oninput="filterBikes()">
     </section>
 
-    <section class="bike-list" id="bikeList">
+    <section class="section bike-list" id="bikeList">
         <div class="bike-card" data-type="sports" data-price="200">
             <img src="images/pulsar.jpg" alt="Bajaj Pulsar">
             <h3>Bajaj Pulsar</h3>
             <p>₹200/day</p>
-            <button onclick="bookBike('Bajaj Pulsar')">Book Now</button>
+            <button class="btn" onclick="bookBike('Bajaj Pulsar')">Book Now</button>
         </div>
         <div class="bike-card" data-type="scooter" data-price="150">
             <img src="images/activa.jpg" alt="Honda Activa">
             <h3>Honda Activa</h3>
             <p>₹150/day</p>
-            <button onclick="bookBike('Honda Activa')">Book Now</button>
+            <button class="btn" onclick="bookBike('Honda Activa')">Book Now</button>
         </div>
         <div class="bike-card" data-type="cruiser" data-price="400">
             <img src="images/royal enfield.jpg" alt="Royal Enfield">
             <h3>Royal Enfield</h3>
             <p>₹400/day</p>
-            <button onclick="bookBike('Royal Enfield')">Book Now</button>
+            <button class="btn" onclick="bookBike('Royal Enfield')">Book Now</button>
         </div>
     </section>
 
-    <section class="kamal-pick">
-        <h2>Kamal's Pick for Almora Roads</h2>
+    <section class="section kamal-and-mayank-pick">
+        <h2>Kamal and Mayank Pick for Almora Roads</h2>
         <p>Royal Enfield - Perfect for cruising through Almora’s scenic hills!</p>
         <img src="images/royal enfield.jpg" alt="Royal Enfield">
-        <button onclick="bookBike('Royal Enfield')">Book Now</button>
+        <button class="btn" onclick="bookBike('Royal Enfield')">Book Now</button>
     </section>
 
-    <section class="testimonials">
+    <section class="section testimonials">
         <h2>What Almora Riders Say</h2>
         <div class="testimonial-container" id="testimonialContainer">
             <div class="testimonial">
-                <p>"Riding the Royal Enfield to Kausani was unforgettable! Kamal’s service is top-notch."</p>
+                <p>"Riding the Royal Enfield to Kausani was unforgettable! Kamal and Mayank service is top-notch."</p>
                 <h4>- Vikram Rawat, Almora</h4>
             </div>
             <div class="testimonial">
@@ -478,7 +106,7 @@
         </div>
     </section>
 
-    <section class="quick-quote" id="quickQuote">
+    <section class="section quick-quote" id="quickQuote">
         <h2>Get a Quick Quote</h2>
         <form id="quoteForm">
             <label for="quoteBike">Select Bike</label>
@@ -487,168 +115,44 @@
                 <option value="Honda Activa">Honda Activa (₹150/day)</option>
                 <option value="Royal Enfield">Royal Enfield (₹400/day)</option>
             </select>
-
             <label for="quoteDays">Number of Days</label>
             <input type="number" id="quoteDays" min="1" required>
-
-            <button type="submit">Get Quote</button>
+            <button type="submit" class="btn">Get Quote</button>
         </form>
     </section>
 
-    <section class="booking-form" id="bookingForm">
+    <section class="section booking-form" id="bookingForm">
         <h2>Book Your Bike</h2>
         <form id="rentalForm">
             <label for="name">Full Name</label>
             <input type="text" id="name" required>
-
             <label for="bike">Selected Bike</label>
             <input type="text" id="bike" readonly>
-
             <label for="startDate">Start Date</label>
             <input type="date" id="startDate" required>
-
             <label for="endDate">End Date</label>
             <input type="date" id="endDate" required>
-
-            <button type="submit">Confirm Booking</button>
+            <button type="submit" class="btn">Confirm Booking</button>
         </form>
     </section>
 
-    <section class="contact-form" id="contactForm">
+    <section class="section contact-form" id="contactForm">
         <h2>Contact Us</h2>
         <form id="contactFormSubmit">
             <label for="contactName">Full Name</label>
             <input type="text" id="contactName" required>
-
             <label for="email">Email</label>
             <input type="email" id="email" required>
-
             <label for="message">Message</label>
             <textarea id="message" rows="5" required></textarea>
-
-            <button type="submit">Send Message</button>
+            <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
     <footer>
-        <p>Designed by Kamal from Almora | © 2025 Kamal Bike Rental</p>
+        <p>Designed by Kamal and Mayank from Almora | © 2025 Kamal and Mayank Bike Rental</p>
     </footer>
 
-    <script>
-        // Scroll to Section
-        function scrollToSection(sectionId) {
-            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Login Modal
-        function showLoginModal() {
-            document.getElementById('loginModal').classList.add('show');
-        }
-
-        function hideLoginModal() {
-            document.getElementById('loginModal').classList.remove('show');
-        }
-
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Static check
-            if (username === 'kamal' && password === 'almora123') {
-                document.getElementById('userStatus').textContent = `Welcome, ${username}!`;
-                hideLoginModal();
-            } else {
-                alert('Invalid credentials! Try username: kamal, password: almora123');
-            }
-        });
-
-        // Bike Filter Functionality
-        function filterBikes() {
-            const filter = document.getElementById('bikeFilter').value;
-            const maxPrice = document.getElementById('priceRange').value;
-            document.getElementById('priceValue').textContent = maxPrice;
-            const bikeCards = document.querySelectorAll('.bike-card');
-
-            bikeCards.forEach(card => {
-                const typeMatch = filter === 'all' || card.dataset.type === filter;
-                const priceMatch = parseInt(card.dataset.price) <= maxPrice;
-                if (typeMatch && priceMatch) {
-                    card.classList.add('show');
-                } else {
-                    card.classList.remove('show');
-                }
-            });
-        }
-
-        // Initialize filter
-        filterBikes();
-
-        // Testimonial Carousel
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial');
-        const totalTestimonials = testimonials.length;
-
-        function showTestimonial(index) {
-            document.getElementById('testimonialContainer').style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-            showTestimonial(currentTestimonial);
-        }, 3000);
-
-        // Booking Functionality
-        function scrollToBooking() {
-            document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function bookBike(bikeName) {
-            document.getElementById('bike').value = bikeName;
-            scrollToBooking();
-        }
-
-        document.getElementById('rentalForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const bike = document.getElementById('bike').value;
-            const startDate = document.getElementById('startDate').value;
-            const endDate = document.getElementById('endDate').value;
-
-            if (!bike) {
-                alert('Please select a bike first!');
-                return;
-            }
-
-            alert(`Booking Confirmed!\nName: ${name}\nBike: ${bike}\nFrom: ${startDate}\nTo: ${endDate}`);
-            this.reset();
-        });
-
-        // Contact Form Functionality
-        document.getElementById('contactFormSubmit').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            alert(`Message Sent!\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
-            this.reset();
-        });
-
-        // Quick Quote Functionality
-        document.getElementById('quoteForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const bike = document.getElementById('quoteBike').value;
-            const days = document.getElementById('quoteDays').value;
-            const prices = {
-                'Bajaj Pulsar': 200,
-                'Honda Activa': 150,
-                'Royal Enfield': 400
-            };
-            const total = prices[bike] * days;
-            alert(`Quick Quote:\nBike: ${bike}\nDays: ${days}\nTotal: ₹${total}`);
-            this.reset();
-        });
-    </script>
+    <script defer src="script.js"></script>
 </body>
 </html>
