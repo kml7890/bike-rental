@@ -163,6 +163,12 @@ document.getElementById('quoteForm').addEventListener('submit', function(e) {
         'Honda Activa': 150,
         'Royal Enfield': 400
     };
+
+    if (days <= 0) {
+        alert('Number of days must be greater than 0!');
+        return;
+    }
+
     const total = prices[bike] * days;
     alert(`Quick Quote:\nBike: ${bike}\nDays: ${days}\nTotal: ₹${total}`);
     this.reset();
