@@ -4,6 +4,16 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #0f766e, #fff7ed);
+    position: relative;
+}
+
+canvas#particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 header {
@@ -11,22 +21,31 @@ header {
     color: white;
     text-align: center;
     padding: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .section {
     padding: 40px 20px;
     background: linear-gradient(to bottom, #e6fffa, #fff7ed);
     border-bottom: 1px solid #14b8a6;
+    position: relative;
+    z-index: 1;
 }
 
 /* Navigation */
+nav {
+    background-color: #1a5c37;
+    position: relative;
+    z-index: 1;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
+    padding: 10px 0;
+    margin: 0;
     display: flex;
     justify-content: center;
-    background-color: #1a5c37;
-    margin: 0;
 }
 
 nav ul li {
@@ -54,6 +73,7 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .login-modal.show {
@@ -65,29 +85,37 @@ nav ul li a:hover {
     padding: 20px;
     border-radius: 5px;
     text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Testimonial Section */
-.testimonial-container {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease;
-}
-
-.testimonial {
-    flex: 0 0 100%;
+/* Hero Section */
+.hero {
     text-align: center;
-    padding: 20px;
 }
 
-.testimonial p {
-    font-style: italic;
+.hero h2 {
+    font-size: 2.5em;
     margin-bottom: 10px;
 }
 
-.testimonial h4 {
-    margin: 0;
-    color: #1a5c37;
+.hero p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Filter Section */
+.filter-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.filter-section label {
+    margin-right: 10px;
+}
+
+.filter-section select, .filter-section input[type="range"] {
+    padding: 5px;
+    margin-right: 10px;
 }
 
 /* Bike Card Section */
@@ -123,6 +151,53 @@ nav ul li a:hover {
 .bike-card img {
     max-width: 100%;
     height: auto;
+    border-radius: 5px;
+}
+
+.bike-card h3 {
+    margin: 10px 0;
+}
+
+.bike-card p {
+    margin: 5px 0;
+}
+
+/* Kamal Pick Section */
+.kamal-pick {
+    text-align: center;
+}
+
+.kamal-pick img {
+    max-width: 250px;
+    border-radius: 5px;
+}
+
+/* Testimonial Section */
+.testimonials {
+    text-align: center;
+}
+
+.testimonial-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
+    overflow: hidden;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    margin: 0;
+    color: #1a5c37;
 }
 
 /* Buttons */
@@ -147,7 +222,7 @@ form {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 form label {
@@ -158,6 +233,8 @@ form input, form select, form textarea {
     padding: 10px;
     border: 1px solid #14b8a6;
     border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 form button {
@@ -173,6 +250,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    z-index: 1;
 }
 
 /* Responsive Design */
@@ -203,5 +281,9 @@ footer {
 
     nav ul li {
         margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
     }
 }
