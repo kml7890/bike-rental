@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamal Hill Cruiser - Explore Almora</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <canvas id="particle-canvas"></canvas>
@@ -39,9 +37,9 @@
         <h1>Kamal Hill Cruiser</h1>
     </header>
 
-    <section class="hero" id="hero">
+    <section class="section hero" id="hero">
         <h2>Explore Almora Hills on Two Wheels!</h2>
-        <p>"Cruise the Hills with Kamal's HillCruiser – Affordable & Hassle-Free!"!</p>
+        <p>"Cruise the Hills with Kamal HillCruiser – Affordable & Hassle-Free!"</p>
         <button class="btn" onclick="scrollToBooking()">Rent Now</button>
     </section>
 
@@ -67,27 +65,27 @@
             <img src="images/pulsar.jpg" alt="Bajaj Pulsar">
             <h3>Bajaj Pulsar</h3>
             <p>₹200/day</p>
-            <button class="btn" onclick="bookBike('Bajaj Pulsar')">Book Now</button>
+            <button class="book-now" onclick="bookBike('Bajaj Pulsar')">Book Now</button>
         </div>
         <div class="bike-card" data-type="scooter" data-price="150">
             <img src="images/activa.jpg" alt="Honda Activa">
             <h3>Honda Activa</h3>
             <p>₹150/day</p>
-            <button class="btn" onclick="bookBike('Honda Activa')">Book Now</button>
+            <button class="book-now" onclick="bookBike('Honda Activa')">Book Now</button>
         </div>
         <div class="bike-card" data-type="cruiser" data-price="400">
-            <img src="images/royal enfield.jpg" alt="Royal Enfield">
+            <img src="images/royalenfield.jpg" alt="Royal Enfield">
             <h3>Royal Enfield</h3>
             <p>₹400/day</p>
-            <button class="btn" onclick="bookBike('Royal Enfield')">Book Now</button>
+            <button class="book-now" onclick="bookBike('Royal Enfield')">Book Now</button>
         </div>
     </section>
 
     <section class="section kamal-pick">
         <h2>Kamal Pick for Almora Roads</h2>
         <p>Royal Enfield - Perfect for cruising through Almora’s scenic hills!</p>
-        <img src="images/royal enfield.jpg" alt="Royal Enfield">
-        <button style="padding:10px 20px ; background-color: #ff6200;margin-top:5px;font-size: 16px;">Book Now</button>
+        <img src="images/royalenfield.jpg" alt="Royal Enfield">
+        <button class="book-now" onclick="bookBike('Royal Enfield')">Book Now</button>
     </section>
 
     <section class="section testimonials">
