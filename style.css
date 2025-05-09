@@ -13,26 +13,71 @@ header {
     padding: 20px;
 }
 
+.section {
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #e6fffa, #fff7ed);
+    border-bottom: 1px solid #14b8a6;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #1a5c37;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li a:hover {
+    color: #ff6200;
+}
+
+/* Login Modal */
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-modal.show {
+    display: flex;
+}
+
+.login-form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
 /* Testimonial Section */
-.testimonial-carousel {
-    position: relative;
-    overflow: hidden;
+.testimonial-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease;
 }
 
 .testimonial {
+    flex: 0 0 100%;
     text-align: center;
     padding: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    position: absolute;
-    width: 100%;
-}
-
-.testimonial.active {
-    opacity: 1;
-    transform: translateY(0);
-    position: relative;
 }
 
 .testimonial p {
@@ -61,9 +106,14 @@ header {
     padding: 15px;
     margin: 10px;
     text-align: center;
-    width: 250px; /* Fixed width for consistency */
+    width: 250px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: none;
+}
+
+.bike-card.show {
+    display: block;
 }
 
 .bike-card:hover {
@@ -75,7 +125,8 @@ header {
     height: auto;
 }
 
-.book-now {
+/* Buttons */
+.book-now, .btn {
     background-color: #ff6200;
     color: white;
     padding: 10px 20px;
@@ -86,8 +137,42 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.book-now:hover {
+.book-now:hover, .btn:hover {
     background-color: #e55a00;
+}
+
+/* Forms */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    padding: 10px;
+    border: 1px solid #14b8a6;
+    border-radius: 5px;
+}
+
+form button {
+    align-self: center;
+}
+
+/* Footer */
+footer {
+    background-color: #1a5c37;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Responsive Design */
@@ -99,6 +184,24 @@ header {
 
     .bike-card {
         width: 90%;
+        margin: 10px 0;
+    }
+
+    .section form {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .testimonial-container {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
         margin: 10px 0;
     }
 }
