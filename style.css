@@ -31,6 +31,7 @@ header {
     border-bottom: 1px solid #14b8a6;
     position: relative;
     z-index: 1;
+    margin-bottom: 20px; /* Added spacing between sections */
 }
 
 /* Navigation */
@@ -38,24 +39,27 @@ nav {
     background-color: #1a5c37;
     position: relative;
     z-index: 1;
+    margin-top: 10px; /* Added space between header and nav */
 }
 
 nav ul {
     list-style: none;
-    padding: 10px 0;
+    padding: 15px 0;
     margin: 0;
     display: flex;
     justify-content: center;
+    gap: 20px; /* Added spacing between nav items */
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     cursor: pointer;
+    font-size: 1.1em;
 }
 
 nav ul li a:hover {
@@ -86,36 +90,48 @@ nav ul li a:hover {
     border-radius: 5px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
+    padding: 60px 20px; /* Increased padding for better spacing */
 }
 
 .hero h2 {
     font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .hero p {
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-size: 1.2em;
+}
+
+/* About Section */
+.about {
+    text-align: center;
 }
 
 /* Filter Section */
 .filter-section {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .filter-section label {
     margin-right: 10px;
+    font-weight: bold;
 }
 
 .filter-section select, .filter-section input[type="range"] {
-    padding: 5px;
-    margin-right: 10px;
+    padding: 8px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 1px solid #14b8a6;
 }
 
 /* Bike Card Section */
@@ -123,7 +139,7 @@ nav ul li a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* Increased gap for better spacing */
     padding: 20px;
 }
 
@@ -132,9 +148,8 @@ nav ul li a:hover {
     border: 1px solid #14b8a6;
     border-radius: 5px;
     padding: 15px;
-    margin: 10px;
     text-align: center;
-    width: 250px;
+    width: 250px; /* Fixed width for consistency */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     display: none;
@@ -152,14 +167,17 @@ nav ul li a:hover {
     max-width: 100%;
     height: auto;
     border-radius: 5px;
+    margin-bottom: 10px;
 }
 
 .bike-card h3 {
     margin: 10px 0;
+    font-size: 1.3em;
 }
 
 .bike-card p {
     margin: 5px 0;
+    font-size: 1.1em;
 }
 
 /* Kamal Pick Section */
@@ -170,6 +188,7 @@ nav ul li a:hover {
 .kamal-pick img {
     max-width: 250px;
     border-radius: 5px;
+    margin: 15px 0;
 }
 
 /* Testimonial Section */
@@ -192,24 +211,27 @@ nav ul li a:hover {
 
 .testimonial p {
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
 }
 
 .testimonial h4 {
     margin: 0;
     color: #1a5c37;
+    font-size: 1em;
 }
 
 /* Buttons */
 .book-now, .btn {
     background-color: #ff6200;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 .book-now:hover, .btn:hover {
@@ -222,19 +244,21 @@ form {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Increased gap for better spacing */
 }
 
 form label {
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 form input, form select, form textarea {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #14b8a6;
     border-radius: 5px;
     width: 100%;
     box-sizing: border-box;
+    font-size: 1em;
 }
 
 form button {
@@ -246,7 +270,7 @@ footer {
     background-color: #1a5c37;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -254,7 +278,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .bike-list {
         flex-direction: column;
         align-items: center;
@@ -263,6 +287,30 @@ footer {
     .bike-card {
         width: 90%;
         margin: 10px 0;
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 5px 0;
     }
 
     .section form {
@@ -274,16 +322,11 @@ footer {
         padding: 10px;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
     .hero h2 {
         font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
     }
 }
