@@ -207,20 +207,74 @@ nav ul li a:hover {
 .kamal-pick .book-now {
     margin: 0 auto; /* Center the button */
 }
+.testimonials {
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    margin: 20px 0;
+    display: flex; /* Add flexbox to center content */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+.testimonials h2 {
+    color: #1a5c37;
+    margin-bottom: 30px;
+    text-align: center; /* Ensure heading is centered */
+}
+
 .testimonial-static {
     display: block;
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .testimonial-static .testimonial {
     display: block;
-    opacity: 1;
     position: static;
     margin-bottom: 20px;
     text-align: center;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-static .testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-static .testimonial p {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.testimonial-static .testimonial p::before,
+.testimonial-static .testimonial p::after {
+    content: '"';
+    font-size: 24px;
+    color: #1a5c37;
+    position: absolute;
+}
+
+.testimonial-static .testimonial p::before {
+    left: 0;
+}
+
+.testimonial-static .testimonial p::after {
+    right: 0;
+}
+
+.testimonial-static .testimonial h4 {
+    color: #ff6200;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 
