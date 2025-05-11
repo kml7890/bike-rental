@@ -3,156 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamal Hill Cruiser - Explore Almora</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Kamal's HillCruiser - Bike Rental in Almora</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <canvas id="particle-canvas"></canvas>
-    <nav>
-        <ul>
-            <li><a onclick="scrollToSection('hero')">Home</a></li>
-            <li><a onclick="scrollToSection('bikeList')">Bikes</a></li>
-            <li><a onclick="scrollToSection('bookingForm')">Book</a></li>
-            <li><a onclick="scrollToSection('contactForm')">Contact</a></li>
-            <li><a onclick="showLoginModal()">Login</a></li>
-            <li id="userStatus"></li>
-        </ul>
-    </nav>
-
-    <div class="login-modal" id="loginModal">
-        <div class="login-form">
-            <h2>Login to Kamal Hill Cruiser</h2>
-            <form id="loginForm">
-                <input type="text" id="username" placeholder="Username" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit" class="btn">Login</button>
-                <button type="button" class="btn" onclick="hideLoginModal()">Close</button>
-            </form>
-            <p>Hint: Try username "kamal" and password "almora123"</p>
+    <header class="header">
+        <canvas id="particle-canvas"></canvas>
+        <div class="container">
+            <h1>Kamal's HillCruiser</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about" onclick="scrollToSection('about')">About</a>
+                <a href="#bikes" onclick="scrollToSection('bikes')">Bikes</a>
+                <a href="#testimonials" onclick="scrollToSection('testimonials')">Testimonials</a>
+                <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+                <a href="#" onclick="showLoginModal()">Login</a>
+            </nav>
+            <a href="#bookingForm" class="btn" onclick="scrollToBooking()"><i class="fas fa-book"></i> Book Now</a>
         </div>
-    </div>
-
-    <header>
-        <h1>Kamal Hill Cruiser</h1>
     </header>
 
-    <section class="section hero" id="hero">
-        <h2>Explore Almora Hills on Two Wheels!</h2>
-        <p>"Cruise the Hills with Kamal HillCruiser – Affordable & Hassle-Free!"</p>
-        <button class="btn" onclick="scrollToBooking()">Rent Now</button>
+    <section class="hero" id="home">
+        <h1>Ride the Hills with Kamal’s HillCruiser!</h1>
+        <p>Explore Almora on two wheels—choose from our range of bikes and scooters!</p>
+        <a href="#bikes" class="btn"><i class="fas fa-motorcycle"></i> Get Started</a>
     </section>
 
-    <section class="section about">
-        <h2>About Kamal Hill Cruiser</h2>
-        <p>Serving adventurers since 2025, we provide the best bikes to explore the scenic hills and vibrant culture of Almora, Kausani, and Binsar. Designed by Kamal, a proud Almora native!</p>
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>At Kamal's HillCruiser, we provide the best bike rental service in Almora. Whether you're a thrill-seeker or just want to enjoy a scenic ride, we have the perfect bike for you!</p>
     </section>
 
-    <section class="section filter-section">
-        <label for="bikeFilter">Filter Bikes: </label>
-        <select id="bikeFilter" onchange="filterBikes()">
-            <option value="all">All Bikes</option>
-            <option value="scooter">Scooter</option>
-            <option value="sports">Sports Bike</option>
-            <option value="cruiser">Cruiser</option>
-        </select>
-        <label for="priceRange">Max Price: ₹<span id="priceValue">500</span>/day</label>
-        <input type="range" id="priceRange" min="100" max="500" value="500" oninput="filterBikes()">
-    </section>
-
-    <section class="section bike-list" id="bikeList">
-        <div class="bike-card" data-type="sports" data-price="200">
-            <img src="images/pulsar.jpg" alt="Bajaj Pulsar">
-            <h3>Bajaj Pulsar</h3>
-            <p>₹200/day</p>
-            <button class="book-now" onclick="bookBike('Bajaj Pulsar')">Book Now</button>
-        </div>
-        <div class="bike-card" data-type="scooter" data-price="150">
-            <img src="images/activa.jpg" alt="Honda Activa">
-            <h3>Honda Activa</h3>
-            <p>₹150/day</p>
-            <button class="book-now" onclick="bookBike('Honda Activa')">Book Now</button>
-        </div>
-        <div class="bike-card" data-type="cruiser" data-price="400">
-            <img src="images/royalenfield.jpg" alt="Royal Enfield">
-            <h3>Royal Enfield</h3>
-            <p>₹400/day</p>
-            <button class="book-now" onclick="bookBike('Royal Enfield')">Book Now</button>
-        </div>
-    </section>
-
-    <section class="section kamal-pick">
-        <h2>Kamal Pick for Almora Roads</h2>
-        <p>Royal Enfield - Perfect for cruising through Almora’s scenic hills!</p>
-        <img src="images/royalenfield.jpg" alt="Royal Enfield">
-        <button class="book-now" onclick="bookBike('Royal Enfield')">Book Now</button>
-    </section>
-
-   <div class="testimonials" id="testimonials">
-    <h2>What Almora Riders Say</h2>
-    <div class="testimonial-static">
-        <div class="testimonial">
-            <p>"Riding the Royal Enfield to Kausani was unforgettable! Kamal service is top-notch."</p>
-            <h4>- Vikram Rawat, Almora</h4>
-        </div>
-        <div class="testimonial">
-            <p>"Honda Activa was perfect for Binsar’s narrow roads. Super easy booking!"</p>
-            <h4>- Neha Bisht, Almora</h4>
-        </div>
-        <div class="testimonial">
-            <p>"Bajaj Pulsar gave me the thrill on Almora’s curves. Will rent again!"</p>
-            <h4>- Rohit Mehra, Almora</h4>
-        </div>
-    </div>
-</div>
-
-    <section class="section quick-quote" id="quickQuote">
-        <h2>Get a Quick Quote</h2>
-        <form id="quoteForm">
-            <label for="quoteBike">Select Bike</label>
-            <select id="quoteBike" required>
-                <option value="Bajaj Pulsar">Bajaj Pulsar (₹200/day)</option>
-                <option value="Honda Activa">Honda Activa (₹150/day)</option>
-                <option value="Royal Enfield">Royal Enfield (₹400/day)</option>
+    <section class="bikes" id="bikes">
+        <h2>Our Bikes</h2>
+        <div class="filter-container">
+            <label for="bikeFilter">Filter by Type:</label>
+            <select id="bikeFilter" onchange="filterBikes()">
+                <option value="all">All</option>
+                <option value="bike">Bike</option>
+                <option value="scooter">Scooter</option>
             </select>
-            <label for="quoteDays">Number of Days</label>
-            <input type="number" id="quoteDays" min="1" required>
-            <button type="submit" class="btn">Get Quote</button>
-        </form>
+            <label for="priceRange">Max Price: ₹<span id="priceValue">500</span>/day</label>
+            <input type="range" id="priceRange" min="100" max="500" value="500" oninput="filterBikes()">
+        </div>
+        <div class="bike-list">
+            <div class="bike-card show" data-type="bike" data-price="200">
+                <img src="images/pulsar.jpg" alt="Bajaj Pulsar">
+                <h3>Bajaj Pulsar</h3>
+                <p>Price: ₹200/day</p>
+                <button class="btn" onclick="bookBike('Bajaj Pulsar')">Book Now</button>
+            </div>
+            <div class="bike-card show" data-type="scooter" data-price="150">
+                <img src="images/activa.jpg" alt="Honda Activa">
+                <h3>Honda Activa</h3>
+                <p>Price: ₹150/day</p>
+                <button class="btn" onclick="bookBike('Honda Activa')">Book Now</button>
+            </div>
+            <div class="bike-card show" data-type="bike" data-price="400">
+                <img src="images/royalenfield.jpg" alt="Royal Enfield">
+                <h3>Royal Enfield</h3>
+                <p>Price: ₹400/day</p>
+                <button class="btn" onclick="bookBike('Royal Enfield')">Book Now</button>
+            </div>
+        </div>
     </section>
 
-    <section class="section booking-form" id="bookingForm">
-        <h2>Book Your Bike</h2>
+    <section class="testimonials" id="testimonials">
+        <h2>What Almora Riders Say</h2>
+        <div class="testimonial-static">
+            <div class="testimonial">
+                <img src="images/reviewer1.jpg" alt="Vikram Rawat" class="reviewer-img">
+                <p>"Riding the Royal Enfield to Kausani was unforgettable! Kamal service is top-notch."</p>
+                <h4>- Vikram Rawat, Almora</h4>
+                <div class="rating">★★★★★</div>
+            </div>
+            <div class="testimonial">
+                <img src="images/reviewer2.jpg" alt="Neha Bisht" class="reviewer-img">
+                <p>"Honda Activa was perfect for Binsar’s narrow roads. Super easy booking!"</p>
+                <h4>- Neha Bisht, Almora</h4>
+                <div class="rating">★★★★☆</div>
+            </div>
+            <div class="testimonial">
+                <img src="images/reviewer3.jpg" alt="Rohit Mehra" class="reviewer-img">
+                <p>"Bajaj Pulsar gave me the thrill on Almora’s curves. Will rent again!"</p>
+                <h4>- Rohit Mehra, Almora</h4>
+                <div class="rating">★★★★★</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="bookingForm">
+        <h2>Book Your Ride</h2>
         <form id="rentalForm">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" required>
-            <label for="bike">Selected Bike</label>
-            <input type="text" id="bike" readonly>
-            <label for="startDate">Start Date</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="text" id="bike" placeholder="Select a Bike" readonly required>
             <input type="date" id="startDate" required>
-            <label for="endDate">End Date</label>
             <input type="date" id="endDate" required>
-            <button type="submit" class="btn">Confirm Booking</button>
+            <button type="submit" class="btn">Submit Booking</button>
         </form>
     </section>
 
-    <section class="section contact-form" id="contactForm">
+    <section class="contact" id="contact">
         <h2>Contact Us</h2>
         <form id="contactFormSubmit">
-            <label for="contactName">Full Name</label>
-            <input type="text" id="contactName" required>
-            <label for="email">Email</label>
-            <input type="email" id="email" required>
-            <label for="message">Message</label>
-            <textarea id="message" rows="5" required></textarea>
+            <input type="text" id="contactName" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
             <button type="submit" class="btn">Send Message</button>
         </form>
     </section>
 
+    <section class="quick-quote">
+        <h2>Quick Quote</h2>
+        <form id="quoteForm">
+            <select id="quoteBike" required>
+                <option value="" disabled selected>Select Bike</option>
+                <option value="Bajaj Pulsar">Bajaj Pulsar - ₹200/day</option>
+                <option value="Honda Activa">Honda Activa - ₹150/day</option>
+                <option value="Royal Enfield">Royal Enfield - ₹400/day</option>
+            </select>
+            <input type="number" id="quoteDays" placeholder="Number of Days" min="1" required>
+            <button type="submit" class="btn">Get Quote</button>
+        </form>
+    </section>
+
     <footer>
-        <p>Designed by Kamal Hill Cruiser from Almora | © 2025 Kamal Hill Cruiser</p>
+        <div class="container">
+            <p>&copy; 2025 Kamal's HillCruiser. All rights reserved.</p>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about" onclick="scrollToSection('about')">About</a>
+                <a href="#bikes" onclick="scrollToSection('bikes')">Bikes</a>
+                <a href="#testimonials" onclick="scrollToSection('testimonials')">Testimonials</a>
+                <a href="#contact" onclick="scrollToSection('contact')">Contact</a>
+            </nav>
+        </div>
     </footer>
 
-    <script defer src="script.js"></script>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="hideLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>Hint: Try username: kamal, password: almora123</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
