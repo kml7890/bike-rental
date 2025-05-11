@@ -103,47 +103,50 @@ function filterBikes() {
 filterBikes();
 
 // Testimonial Carousel
-window.onload = () => {
-    let currentTestimonial = 0;
-    const testimonials = document.querySelectorAll('.testimonial');
-    const totalTestimonials = testimonials.length;
-    const testimonialContainer = document.getElementById('testimonialContainer');
+let currentTestimonial = 0;
+let testimonials = null;
+let totalTestimonials = 0;
+let testimonialContainer = null;
 
-    // Function to show testimonial at a specific index
-    function showTestimonial(index) {
-        if (testimonialContainer) {
-            testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
-        }
+// Function to show testimonial at a specific index
+function showTestimonial(index) {
+    if (testimonialContainer) {
+        testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
     }
+}
 
-    // Function for automatic sliding
-    function startCarousel() {
-        if (totalTestimonials > 0 && testimonialContainer) {
-            setTimeout(() => {
-                setInterval(() => {
-                    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-                    showTestimonial(currentTestimonial);
-                }, 3000);
-            }, 1000); // Delay to ensure DOM is fully loaded
-        }
+// Function for automatic sliding
+function startCarousel() {
+    if (totalTestimonials > 0 && testimonialContainer) {
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            showTestimonial(currentTestimonial);
+        }, 3000);
     }
+}
 
-    // Manual control functions for Previous and Next buttons
-    window.prevTestimonial = function() {
-        currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-        showTestimonial(currentTestimonial);
-    };
+// Manual control functions for Previous and Next buttons
+function prevTestimonial() {
+    currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+    showTestimonial(currentTestimonial);
+}
 
-    window.nextTestimonial = function() {
-        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-        showTestimonial(currentTestimonial);
-    };
+function nextTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+    showTestimonial(currentTestimonial);
+}
+
+// Initialize the carousel after the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    testimonials = document.querySelectorAll('.testimonial');
+    totalTestimonials = testimonials.length;
+    testimonialContainer = document.getElementById('testimonialContainer');
 
     // Initial call to show the first testimonial
     showTestimonial(currentTestimonial);
     // Start the carousel
     startCarousel();
-};
+});
 
 // Booking Functionality
 function scrollToBooking() {
