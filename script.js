@@ -109,20 +109,35 @@ window.onload = () => {
     const totalTestimonials = testimonials.length;
     const testimonialContainer = document.getElementById('testimonialContainer');
 
+    // Function to show testimonial at a specific index
     function showTestimonial(index) {
         if (testimonialContainer) {
             testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
         }
     }
 
+    // Function for automatic sliding
     function startCarousel() {
         if (totalTestimonials > 0 && testimonialContainer) {
-            setInterval(() => {
-                currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-                showTestimonial(currentTestimonial);
-            }, 3000);
+            setTimeout(() => {
+                setInterval(() => {
+                    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+                    showTestimonial(currentTestimonial);
+                }, 3000);
+            }, 1000); // Delay to ensure DOM is fully loaded
         }
     }
+
+    // Manual control functions for Previous and Next buttons
+    window.prevTestimonial = function() {
+        currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+        showTestimonial(currentTestimonial);
+    };
+
+    window.nextTestimonial = function() {
+        currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+        showTestimonial(currentTestimonial);
+    };
 
     // Initial call to show the first testimonial
     showTestimonial(currentTestimonial);
