@@ -103,25 +103,32 @@ function filterBikes() {
 filterBikes();
 
 // Testimonial Carousel
-document.addEventListener('DOMContentLoaded', () => {
+window.onload = () => {
     let currentTestimonial = 0;
     const testimonials = document.querySelectorAll('.testimonial');
     const totalTestimonials = testimonials.length;
+    const testimonialContainer = document.getElementById('testimonialContainer');
 
     function showTestimonial(index) {
-        const testimonialContainer = document.getElementById('testimonialContainer');
         if (testimonialContainer) {
             testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
         }
     }
 
-    if (totalTestimonials > 0) {
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-            showTestimonial(currentTestimonial);
-        }, 3000);
+    function startCarousel() {
+        if (totalTestimonials > 0 && testimonialContainer) {
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+                showTestimonial(currentTestimonial);
+            }, 3000);
+        }
     }
-});
+
+    // Initial call to show the first testimonial
+    showTestimonial(currentTestimonial);
+    // Start the carousel
+    startCarousel();
+};
 
 // Booking Functionality
 function scrollToBooking() {
