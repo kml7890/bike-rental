@@ -360,3 +360,25 @@ footer {
         font-size: 0.9em;
     }
 }
+/* Testimonial Controls */
+.testimonial-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial-controls .btn {
+    background-color: #1a5c37;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-controls .btn:hover {
+    background-color: #ff6200;
+}
