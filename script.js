@@ -112,6 +112,8 @@ let testimonialContainer = null;
 function showTestimonial(index) {
     if (testimonialContainer) {
         testimonialContainer.style.transform = `translateX(-${index * 100}%)`;
+        // Force reflow to ensure the transition applies
+        testimonialContainer.offsetHeight;
     }
 }
 
