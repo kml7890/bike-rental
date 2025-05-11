@@ -88,23 +88,27 @@
         <button class="book-now" onclick="bookBike('Royal Enfield')">Book Now</button>
     </section>
 
-    <section class="section testimonials">
-        <h2>What Almora Riders Say</h2>
-        <div class="testimonial-container" id="testimonialContainer">
-            <div class="testimonial">
-                <p>"Riding the Royal Enfield to Kausani was unforgettable! Kamal service is top-notch."</p>
-                <h4>- Vikram Rawat, Almora</h4>
-            </div>
-            <div class="testimonial">
-                <p>"Honda Activa was perfect for Binsar’s narrow roads. Super easy booking!"</p>
-                <h4>- Neha Bisht, Almora</h4>
-            </div>
-            <div class="testimonial">
-                <p>"Bajaj Pulsar gave me the thrill on Almora’s curves. Will rent again!"</p>
-                <h4>- Rohit Mehra, Almora</h4>
-            </div>
+    <div class="testimonials" id="testimonials">
+    <h2>What Almora Riders Say</h2>
+    <div class="testimonial-controls">
+        <button onclick="prevTestimonial()" class="btn">Previous</button>
+        <button onclick="nextTestimonial()" class="btn">Next</button>
+    </div>
+    <div class="testimonial-container" id="testimonialContainer">
+        <div class="testimonial">
+            <p>"Riding the Royal Enfield to Kausani was unforgettable! Kamal service is top-notch."</p>
+            <h4>- Vikram Rawat, Almora</h4>
         </div>
-    </section>
+        <div class="testimonial">
+            <p>"Honda Activa was perfect for Binsar’s narrow roads. Super easy booking!"</p>
+            <h4>- Neha Bisht, Almora</h4>
+        </div>
+        <div class="testimonial">
+            <p>"Bajaj Pulsar gave me the thrill on Almora’s curves. Will rent again!"</p>
+            <h4>- Rohit Mehra, Almora</h4>
+        </div>
+    </div>
+</div>
 
     <section class="section quick-quote" id="quickQuote">
         <h2>Get a Quick Quote</h2>
