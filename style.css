@@ -97,8 +97,8 @@ body {
 }
 
 .btn-small {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 8px 15px;
+    font-size: 14px;
 }
 
 .about, .bikes, .testimonials, .booking, .contact, .quick-quote {
@@ -212,8 +212,8 @@ body {
 }
 
 .reviewer-img-small {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     margin: 0 auto 10px;
     display: block;
@@ -338,7 +338,7 @@ footer a:hover {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 24-parallelpx;
+    font-size: 24px;
     cursor: pointer;
 }
 
