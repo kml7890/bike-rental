@@ -12,7 +12,7 @@ body {
 }
 
 .header {
-    background: linear-gradient(to bottom, #1a5c37, #000000);
+    background: linear-gradient(to bottom, #134d2d, #000000);
     padding: 15px 0;
     position: sticky;
     top: 0;
@@ -40,7 +40,7 @@ body {
 }
 
 .header nav a:hover {
-    color: #ff6200;
+    color: #ff751a;
 }
 
 #particle-canvas {
@@ -77,7 +77,7 @@ body {
 }
 
 .btn {
-    background-color: #ff6200;
+    background-color: #ff751a;
     color: #fff;
     padding: 12px 25px;
     text-decoration: none;
@@ -92,13 +92,18 @@ body {
 }
 
 .btn:hover {
-    background-color: #e05500;
+    background-color: #e06600;
     transform: scale(1.05);
 }
 
+.btn-small {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
 .about, .bikes, .testimonials, .booking, .contact, .quick-quote {
-    padding: 50px 20px;
-    margin: 20px 0;
+    padding: 60px 20px;
+    margin: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,8 +114,9 @@ body {
 }
 
 .bikes h2, .about h2, .testimonials h2, .booking h2, .contact h2, .quick-quote h2 {
-    color: #1a5c37;
+    color: #134d2d;
     font-weight: 700;
+    font-size: 32px;
     margin-bottom: 30px;
 }
 
@@ -146,21 +152,29 @@ body {
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .bike-card.show {
     display: block;
 }
 
+.bike-card:hover {
+    transform: translateY(-5px);
+}
+
 .bike-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .bike-card h3 {
     margin: 15px 0;
-    color: #1a5c37;
+    color: #134d2d;
 }
 
 .bike-card p {
@@ -183,6 +197,8 @@ body {
     text-align: center;
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .reviewer-img {
@@ -192,6 +208,17 @@ body {
     margin: 0 auto 10px;
     display: block;
     object-fit: cover;
+    border: 2px solid #134d2d;
+}
+
+.reviewer-img-small {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: block;
+    object-fit: cover;
+    border: 2px solid #134d2d;
 }
 
 .testimonial-static .testimonial p {
@@ -206,7 +233,7 @@ body {
 .testimonial-static .testimonial p::after {
     content: '"';
     font-size: 24px;
-    color: #1a5c37;
+    color: #134d2d;
     position: absolute;
 }
 
@@ -219,14 +246,14 @@ body {
 }
 
 .testimonial-static .testimonial h4 {
-    color: #ff6200;
+    color: #ff751a;
     font-weight: bold;
     font-size: 16px;
     margin-top: 10px;
 }
 
 .rating {
-    color: #ff6200;
+    color: #ff751a;
     font-size: 18px;
     margin-top: 5px;
 }
@@ -236,6 +263,8 @@ body {
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .booking form input,
@@ -247,6 +276,7 @@ body {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
 }
 
@@ -256,7 +286,7 @@ body {
 }
 
 footer {
-    background-color: #1a5c37;
+    background-color: #134d2d;
     color: #fff;
     text-align: center;
     padding: 20px 0;
@@ -275,7 +305,7 @@ footer a {
 }
 
 footer a:hover {
-    color: #ff6200;
+    color: #ff751a;
 }
 
 .modal {
@@ -296,6 +326,8 @@ footer a:hover {
     max-width: 400px;
     text-align: center;
     border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -306,7 +338,7 @@ footer a:hover {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 24px;
+    font-size: 24-parallelpx;
     cursor: pointer;
 }
 
@@ -319,13 +351,13 @@ footer a:hover {
     bottom: 30px;
     right: 30px;
     display: none;
-    background-color: #ff6200;
+    background-color: #ff751a;
     padding: 15px 20px;
     z-index: 1000;
     border-radius: 50%;
 }
 
 .back-to-top:hover {
-    background-color: #e05500;
+    background-color: #e06600;
     transform: scale(1.1);
 }
