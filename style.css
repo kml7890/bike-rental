@@ -53,7 +53,7 @@ body {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/almora-hills.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/almoraa.jpg') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     flex-direction: column;
