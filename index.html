@@ -13,10 +13,7 @@
 </head>
 <body>
     <header class="header">
-        <video autoplay loop muted playsinline>
-            <source src="alm.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <canvas id="particle-canvas"></canvas>
         <div class="container">
             <h1>Kamal Hill Cruiser</h1>
             <nav>
@@ -32,9 +29,15 @@
     </header>
 
     <section class="hero" id="home">
-        <h1>Ride the Hills with Kamal Hill Cruiser!</h1>
-        <p>Explore Almora on two wheels—choose from our range of bikes and scooters!</p>
-        <a href="#bikes" class="btn"><i class="fas fa-motorcycle"></i> Get Started</a>
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="https://example.com/videos/bike-alm.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Ride the Hills with Kamal Hill Cruiser!</h1>
+            <p>Explore Almora on two wheels—choose from our range of bikes and scooters!</p>
+            <a href="#bikes" class="btn"><i class="fas fa-motorcycle"></i> Get Started</a>
+        </div>
     </section>
 
     <section class="about" id="about">
