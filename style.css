@@ -58,13 +58,8 @@ body {
 .hero {
     position: relative;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
     text-align: center;
     color: #fff;
-    padding: 0 20px;
     overflow: hidden;
 }
 
@@ -80,23 +75,25 @@ body {
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
-    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    max-width: 800px;
+    border-radius: 8px;
+    max-width: 90%;
+    width: 1;
+    z-index: 1;
 }
 
-.hero h1 {
+.hero-content h1 {
     font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0,0.7);
 }
 
-.hero p {
+.hero-content p {
     font-size: 18px;
     margin-bottom: 20px;
 }
@@ -104,12 +101,12 @@ body {
 .btn {
     background-color: #ff751a;
     color: #fff;
-    padding: 12px 25px;
+    padding: 12px 20px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: 600;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s ease;
 }
 
 .btn i {
@@ -121,36 +118,27 @@ body {
     transform: scale(1.05);
 }
 
-.btn-small {
-    padding: 8px 15px;
-    font-size: 14px;
-}
-
 .about, .bikes, .testimonials, .booking, .contact, .quick-quote {
-    padding: 60px 20px;
-    margin: 20px 0;
+    padding: 40px;
+    margin: 20px auto;
     background: linear-gradient(to bottom, #f5f5f5, #e6f0e6);
-    border-radius: 10px;
-}
-
-.about {
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1100px;
+    border-radius: 8px;
 }
 
-.bikes h2, .about h2, .testimonials h2, .booking h2, .contact h2, .quick-quote h2 {
+.about h2, .bikes h2, .testimonials h2, .booking h2, .contact h2, .quick-quote h2 {
     color: #134d2d;
     font-weight: 700;
     font-size: 32px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .filter-container {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
 }
 
@@ -177,9 +165,9 @@ body {
     background-color: #fff;
     width: 300px;
     text-align: center;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    padding: 15px;
+    border: 8px;
+    border-radius: 1px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -200,7 +188,7 @@ body {
 }
 
 .bike-card h3 {
-    margin: 15px 0;
+    margin: 10px 0;
     color: #134d2d;
 }
 
@@ -363,17 +351,17 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero h1 {
+    .hero-content h1 {
         font-size: 28px;
     }
 
-    .hero p {
+    .hero-content p {
         font-size: 16px;
     }
 
     .hero-content {
         padding: 15px;
-        margin-bottom: 15px;
+        bottom: 15px;
     }
 
     .btn {
@@ -398,16 +386,17 @@ footer a:hover {
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
+    .hero-content h1 {
         font-size: 24px;
     }
 
-    .hero p {
+    .hero-content p {
         font-size: 14px;
     }
 
     .hero-content {
         padding: 10px;
+        bottom: 10px;
     }
 }
 ```
