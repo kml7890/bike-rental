@@ -57,9 +57,16 @@ body {
 
 .hero {
     position: relative;
-    height: 100vh;
     text-align: center;
     color: #fff;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
     overflow: hidden;
 }
 
@@ -71,26 +78,21 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
-    z-index: -1;
 }
 
 .hero-content {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 8px;
     max-width: 90%;
-    width: 1;
-    z-index: 1;
+    margin: 20px auto;
+    text-align: center;
 }
 
 .hero-content h1 {
     font-size: 36px;
     margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0,0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content p {
